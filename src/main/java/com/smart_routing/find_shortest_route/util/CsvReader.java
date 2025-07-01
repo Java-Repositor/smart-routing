@@ -1,13 +1,13 @@
 package com.smart_routing.find_shortest_route.util;
 
-import com.opencsv.bean.CsvToBeanBuilder;
-import com.smart_routing.find_shortest_route.model.Location;
-import org.springframework.stereotype.Component;
-
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Component;
+
+import com.opencsv.bean.CsvToBeanBuilder;
+import com.smart_routing.find_shortest_route.model.Location;
 
 /**
  * Utility component for reading and parsing location data from a CSV file.
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @Component
 public class CsvReader {
 
-    private static final String FILE_PATH = "src/main/resources/pincode-data.csv";
+    private static final String FILE_PATH = "src/main/resources/sameple-data.csv";
 
     private List<Location> locationData = new ArrayList<>();
 

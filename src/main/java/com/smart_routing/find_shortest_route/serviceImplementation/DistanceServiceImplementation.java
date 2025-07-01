@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.smart_routing.find_shortest_route.algorithms.Dijkstra;
 import com.smart_routing.find_shortest_route.graph.BruteForceGraphBuilder;
+import com.smart_routing.find_shortest_route.graph.CustomGraphBuilder;
 import com.smart_routing.find_shortest_route.graph.Graph;
 import com.smart_routing.find_shortest_route.graph.GraphBuilder;
 import com.smart_routing.find_shortest_route.graph.KDTreeGraphBuilder;
@@ -41,7 +42,7 @@ public class DistanceServiceImplementation implements DistanceService {
 
 			// Select GraphBuilder strategy
 			GraphBuilder builder = "brute".equalsIgnoreCase(mode) ? new BruteForceGraphBuilder()
-					: new KDTreeGraphBuilder();
+					: new CustomGraphBuilder();
 
 			// Build the graph with N-nearest neighbors
 			Graph graph = builder.build(locations, 30);
